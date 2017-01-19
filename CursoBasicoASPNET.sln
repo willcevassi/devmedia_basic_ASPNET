@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoBasicoASPNET", "CursoBasicoASPNET\CursoBasicoASPNET.csproj", "{04C1F7FF-7412-46D3-94A9-D762FD443858}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoBasicoASPNET", "CursoBasicoASPNET\CursoBasicoASPNET.csproj", "{CF48DFA8-1510-4302-BA29-1489B6D133AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04C1F7FF-7412-46D3-94A9-D762FD443858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04C1F7FF-7412-46D3-94A9-D762FD443858}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04C1F7FF-7412-46D3-94A9-D762FD443858}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04C1F7FF-7412-46D3-94A9-D762FD443858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF48DFA8-1510-4302-BA29-1489B6D133AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF48DFA8-1510-4302-BA29-1489B6D133AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF48DFA8-1510-4302-BA29-1489B6D133AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF48DFA8-1510-4302-BA29-1489B6D133AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
