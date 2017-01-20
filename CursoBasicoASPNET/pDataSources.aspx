@@ -25,7 +25,19 @@
             <asp:GridView ID="GVUsuarios" runat="server" AutoGenerateColumns="False" DataKeyNames="UsuarioId" DataSourceID="DsUsuarios" Width="100%" AllowPaging="True" PageSize="5">
                 <Columns>
                     <asp:BoundField DataField="UsuarioId" HeaderText="#" InsertVisible="False" ReadOnly="True" SortExpression="UsuarioId" />
-                    <asp:BoundField DataField="Login" HeaderText="Login" SortExpression="Login" />
+                    
+                    <%-- Aqui uso o controle BoundField Normal --%>
+                    <asp:BoundField DataField="login" HeaderText="Login (BoundField)" SortExpression="descricao" />
+                    
+                    <%--Aqui uso o mesmo controle acima transformado em um template field o que me garante maior nivel de personalização--%>
+                    <asp:TemplateField HeaderText="Login (TemplateField)" SortExpression="Login">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Login") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# doUpper(Eval("Login").ToString()) %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:CommandField CancelText="Cancelar" EditText="Editar" ShowEditButton="True" />
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -35,7 +47,7 @@
                     </asp:TemplateField>
                     <asp:ButtonField CommandName="Delete" Text="Excluir S/ Confirmação" ButtonType="Link" />
                 </Columns>
-                <PagerStyle BackColor="#3333CC" ForeColor="White" />
+                <%--<PagerStyle BackColor="#3333CC" ForeColor="White" />--%>
             </asp:GridView>
         </div>
     </form>

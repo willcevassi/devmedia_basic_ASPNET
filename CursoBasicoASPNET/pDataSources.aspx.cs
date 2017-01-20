@@ -13,5 +13,10 @@ namespace CursoBasicoASPNET
         {
 
         }
+
+        protected string doUpper(string texto)
+        {
+            return texto.ToUpper();
+        }
     }
 }
