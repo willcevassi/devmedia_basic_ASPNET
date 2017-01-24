@@ -9,9 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div id="dvFiltros" style="height:80px;vertical-align:middle">
+        <div id="dvFiltros" style="height:80px;vertical-align:middle; width: 868px;">
             <fieldset>
                 <legend>Filtros:</legend>
+                <asp:Label runat="server" ID="lblNome" Text="Nome:"/>
                 <asp:TextBox ID="txtBuscaNome" runat="server" Width="440px"></asp:TextBox>
                 <asp:Button ID="btnPesquisar" runat="server" OnClick="btnPesquisar_Click" Text="Pesquisar" />
             </fieldset>
