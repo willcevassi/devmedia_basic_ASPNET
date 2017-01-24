@@ -7,26 +7,36 @@
     <title></title>
 </head>
 <body>
+    <h3>Usando Link DataSource</h3>
     <form id="form1" runat="server">
-    <div>
-    
-        <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="CursoBasicoASPNET.NortwindLinkContextDataContext" EntityTypeName="" OrderBy="ProductName" Select="new (ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued)" TableName="Products">
+    <div>    
+        <asp:LinqDataSource ID="DsProdutos" runat="server" ContextTypeName="CursoBasicoASPNET.NortwindLinkContextDataContext" EntityTypeName="" OrderBy="ProductName" Select="new (ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued)" TableName="Products" AutoGenerateWhereClause="True">
+            <WhereParameters>
+                <asp:ControlParameter ControlID="txtBuscaNome" Name="ProductName" PropertyName="Text" Type="String" />
+            </WhereParameters>
         </asp:LinqDataSource>
-    
+        
     </div>
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="LinqDataSource1" ForeColor="#333333" GridLines="None">
+    <div id="dvFiltros" style="height:80px;vertical-align:middle;width:900px;">
+        <fieldset>
+            <legend>Filtros:</legend>
+            <asp:TextBox ID="txtBuscaNome" runat="server" Width="440px"></asp:TextBox>
+            <asp:Button ID="btnPesquisar" runat="server" OnClick="btnPesquisar_Click" Text="Pesquisar" />
+        </fieldset>
+    </div>
+
+    <div id="dvGrid" style="width:900px;">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="DsProdutos" ForeColor="#333333" GridLines="None" Width="900px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="ProductID" HeaderText="#" ReadOnly="True" SortExpression="ProductID" />
-                <asp:BoundField DataField="ProductName" HeaderText="Nome" ReadOnly="True" SortExpression="ProductName" />
-                <asp:BoundField DataField="SupplierID" HeaderText="SupplierID" ReadOnly="True" SortExpression="SupplierID" Visible="False" />
-                <asp:BoundField DataField="CategoryID" HeaderText="CategoryID" ReadOnly="True" SortExpression="CategoryID" Visible="False" />
-                <asp:BoundField DataField="QuantityPerUnit" HeaderText="Unidade" ReadOnly="True" SortExpression="QuantityPerUnit" />
+                <asp:BoundField DataField="ProductName" HeaderText="Nomme" ReadOnly="True" SortExpression="ProductName" />
+                <asp:BoundField DataField="QuantityPerUnit" HeaderText="Embalagem" ReadOnly="True" SortExpression="QuantityPerUnit" />
                 <asp:BoundField DataField="UnitPrice" HeaderText="Preço Unitário" ReadOnly="True" SortExpression="UnitPrice" />
                 <asp:BoundField DataField="UnitsInStock" HeaderText="Estoque" ReadOnly="True" SortExpression="UnitsInStock" />
                 <asp:BoundField DataField="UnitsOnOrder" HeaderText="Reservado" ReadOnly="True" SortExpression="UnitsOnOrder" />
-                <asp:BoundField DataField="ReorderLevel" HeaderText="ReorderLevel" ReadOnly="True" SortExpression="ReorderLevel" Visible="False" />
-                <asp:CheckBoxField DataField="Discontinued" HeaderText="Descontinuado" ReadOnly="True" SortExpression="Discontinued" />
+                <asp:BoundField DataField="ReorderLevel" HeaderText="ReorderLevel" ReadOnly="True" SortExpression="ReorderLevel" />
+                <asp:CheckBoxField DataField="Discontinued" HeaderText="Discontinuado" ReadOnly="True" SortExpression="Discontinued" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -39,6 +49,7 @@
             <SortedDescendingCellStyle BackColor="#D4DFE1" />
             <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
+    </div>
     </form>
 </body>
 </html>

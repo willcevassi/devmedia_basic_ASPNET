@@ -125,6 +125,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="pDataSources.aspx" />
     <Content Include="pLinkDataSource.aspx" />
+    <Content Include="pObjectDataSource01.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -199,6 +200,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="NorthwindSambleContext01.cs" />
     <Compile Include="NortwindLinkContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -217,6 +219,13 @@
     </Compile>
     <Compile Include="pLinkDataSource.aspx.designer.cs">
       <DependentUpon>pLinkDataSource.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pObjectDataSource01.aspx.cs">
+      <DependentUpon>pObjectDataSource01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pObjectDataSource01.aspx.designer.cs">
+      <DependentUpon>pObjectDataSource01.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
